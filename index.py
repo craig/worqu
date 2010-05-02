@@ -85,7 +85,7 @@ if form.has_key('edit'):
 		myprio = str('4')
 	
 	# get prio array
-	cur.execute("SELECT prio, priodesc, color FROM prioattr;" )
+	cur.execute("SELECT prio, priodesc, color FROM prioattr ORDER by prio;" )
 	rows = cur.fetchall();
 
 	# aktuelles vorselektieren
