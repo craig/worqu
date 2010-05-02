@@ -52,7 +52,7 @@ color		varchar(16)	NOT NULL
 );
 INSERT INTO prioattr (prio,priodesc,color) VALUES (1,'urgent','red');
 INSERT INTO prioattr (prio,priodesc,color) VALUES (2,'high','tomato');
-INSERT INTO prioattr (prio,priodesc,color) VALUES (3,'normal','##FFFF66');
+INSERT INTO prioattr (prio,priodesc,color) VALUES (3,'normal','#FFFF66');
 INSERT INTO prioattr (prio,priodesc,color) VALUES (4,'low','lightgreen');
 
 GRANT ALL ON person TO worqu;
