@@ -4,7 +4,7 @@ for dispatching work to co-workers and as a reminder for yourself.
 
 Workqu is meant to be a tool for quickly dispatching tasks that are in your
 bugtracker(s) so that everyone knows which task is the next importent one and
-does finish unimportant tasks while there are important ones open.
+does not begin unimportant tasks while there are important ones open.
 
 BTW: There is no authentication at all, everyone can mess up the queue. :)
 
