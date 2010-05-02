@@ -306,7 +306,7 @@ f.close()
 cur.execute("SELECT count(pid) FROM person;")
 rows = cur.fetchall()[0][0];
 
-cur.execute("SELECT prio, color FROM prioattr;")
+cur.execute("SELECT prio, color FROM prioattr ORDER BY prio;")
 color = cur.fetchall();
 
 cur.execute("SELECT * FROM person;")
