@@ -1,0 +1,66 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Worqu</title>
+
+	<script type="text/javascript" src="./js/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="./js/fancybox/jquery.easing-1.3.pack.js"></script>
+	<script type="text/javascript" src="./js/fancybox/jquery.mousewheel-3.0.2.pack.js"></script>
+	<script type="text/javascript" src="./js/fancybox/jquery.fancybox-1.3.1.pack.js"></script>
+	<link rel="stylesheet" type="text/css" href="./js/fancybox/jquery.fancybox-1.3.1.css" media="screen" />
+	<script type="text/javascript" src="./js/web.js"></script>
+</head>
+
+<style type="text/css">
+table.sample {
+	border-width: 1px;
+	border-spacing: 2px;
+	border-style: inset;
+	border-color: gray;
+	border-collapse: collapse;
+	background-color: white;
+}
+table.sample th {
+	border-width: 1px;
+	padding: 3px;
+	border-style: dashed;
+	border-color: gray;
+	background-color: white;
+	-moz-border-radius: 0px;
+}
+table.sample td {
+	border-width: 1px;
+	padding: 3px;
+	border-style: dashed;
+	border-color: gray;
+	background-color: white;
+	-moz-border-radius: 0px;
+}
+
+html, body {margin:0; padding:0; width:100%; height:100%; overflow:hidden;}
+#background {position:absolute; z-index:1; width:100%; height:100%;}
+#scroller {position:absolute; width:100%; height:100%; top:0; left:0;overflow:auto; z-index:2;} 
+#content {padding:5px 20px 20px 20px;}
+</style>
+
+<body link="black" alink="black" vlink="black" bgcolor="lightgrey" >
+
+<div>
+  <img id="background" src="DUMMY_BACKGROUND" alt="" title="" /> 
+</div>
+
+<div id="scroller">
+<div id="content">
+
+<A HREF="/index.py" onfocus="this.blur()"><img src="head.jpg" border="0"></A>
+
+<H3>
+Admin-Prioliste
+<A class="openedit" HREF="/index.py?edit=-1">new</A>
+<A HREF="/index.py">refresh</A>
+</H3>
+
+<table class="sample"> <tr>
+
+
+

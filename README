@@ -1,0 +1,23 @@
+This is Worqu, a simple web-based program to manage a queue of tasks.
+It's just in alpha state, and needs improvements, but it's already good enough
+for dispatching work to co-workers and as a reminder for yourself.
+
+Workqu is meant to be a tool for quickly dispatching tasks that are in your
+bugtracker(s) so that everyone knows which task is the next importent one and
+does finish unimportant tasks while there are important ones open.
+
+BTW: There is no authentication at all, everyone can mess up the queue. :)
+
+How to get this to work:
+- create a postgres database
+- create new users manually with psql (see scheme.sql)
+- edit inc.py, put in username, password etc.
+- make sure your webserver supports python
+- apache example:
+
+	<Directory "/var/www/foo">
+		Options +ExecCGI
+		AddHandler cgi-script .py
+	</Directory>
+- have a look at index.py ;)
+
