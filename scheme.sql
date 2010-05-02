@@ -27,7 +27,7 @@ endtime		timestamp	NOT NULL,
 url		varchar(256),
 position	int		NOT NULL
 );
-INSERT INTO task (createts,category,prio,perc,endtime,taskdesc,url,position) VALUES (now(), 1, 1, 0, '2010-03-11', 'BT FW', 'http://your.bug.tracker/1', 0);
+INSERT INTO task (createts,category,prio,perc,endtime,taskdesc,url,position) VALUES (now(), 1, 1, 0, '2010-03-11', 'Fix Firewall', 'http://your.bug.tracker/1', 0);
 INSERT INTO task (createts,category,prio,perc,endtime,taskdesc,url,position) VALUES (now(), 1, 2, 1, '2010-03-11', 'Clean the room', 'http://your.bug.tracker/2', 0);
 
 CREATE TABLE person (
@@ -52,7 +52,7 @@ color		varchar(16)	NOT NULL
 );
 INSERT INTO prioattr (prio,priodesc,color) VALUES (1,'urgent','red');
 INSERT INTO prioattr (prio,priodesc,color) VALUES (2,'high','tomato');
-INSERT INTO prioattr (prio,priodesc,color) VALUES (3,'normal','yellow');
+INSERT INTO prioattr (prio,priodesc,color) VALUES (3,'normal','##FFFF66');
 INSERT INTO prioattr (prio,priodesc,color) VALUES (4,'low','lightgreen');
 
 GRANT ALL ON person TO worqu;
