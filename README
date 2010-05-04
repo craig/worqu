@@ -9,15 +9,19 @@ does not begin unimportant tasks while there are important ones open.
 BTW: There is no authentication at all, everyone can mess up the queue. :)
 
 How to get this to work:
-- create a postgres database
+- create user for postgres database (CREATE ROLE worqu WITH LOGIN PASSWORD 'worqu';)
+- create a postgres database (CREATE DATABASE worqu;)
 - create new users manually with psql (see scheme.sql)
 - edit inc.py, put in username, password etc.
+- install the python module psycopg2 (called python-psycopg2 in debian)
 - make sure your webserver supports python
 - apache example:
 
 	<Directory "/var/www/foo">
+		DirectoryIndex index.py
 		Options +ExecCGI
 		AddHandler cgi-script .py
 	</Directory>
+
 - have a look at index.py ;)
 
