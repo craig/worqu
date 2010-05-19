@@ -23,5 +23,6 @@ How to get this to work:
 		AddHandler cgi-script .py
 	</Directory>
 
+- mkdir /var/www/foo/img, put your favorite wallpapers there
 - have a look at index.py ;)
 

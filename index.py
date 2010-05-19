@@ -295,12 +295,15 @@ print "Content-Type: text/html; charset=utf-8\n"
 # show header with random picture in the background 
 f = open("templates/header", "r")
 data = f.read()
-files = os.listdir("img")
-rnr = random.randrange(0,len(files))
-imgfile = files[ rnr  ]
-data = data.replace("DUMMY_BACKGROUND",	"img/" + str(imgfile))
-print data
-f.close()
+try:
+	files = os.listdir("img")
+	rnr = random.randrange(0,len(files))
+	imgfile = files[ rnr  ]
+	data = data.replace("DUMMY_BACKGROUND",	"img/" + str(imgfile))
+	print data
+	f.close()
+except:
+	pass
 
 # pre-fetching needed data
 cur.execute("SELECT count(pid) FROM person;")
