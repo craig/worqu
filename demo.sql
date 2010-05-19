@@ -4,6 +4,8 @@ Needs postgresql. Import with: psql < scheme.sql
 
 */
 
+\c worqu;
+
 INSERT INTO category (text) VALUES ('Internal');
 INSERT INTO category (text) VALUES ('Customer Project');
 
