@@ -300,10 +300,11 @@ try:
 	rnr = random.randrange(0,len(files))
 	imgfile = files[ rnr  ]
 	data = data.replace("DUMMY_BACKGROUND",	"img/" + str(imgfile))
-	print data
-	f.close()
 except:
 	pass
+
+print data
+f.close()
 
 # pre-fetching needed data
 cur.execute("SELECT count(pid) FROM person;")
