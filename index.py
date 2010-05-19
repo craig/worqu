@@ -88,7 +88,7 @@ if form.has_key('edit'):
 	cur.execute("SELECT prio, priodesc, color FROM prioattr ORDER by prio;" )
 	rows = cur.fetchall();
 
-	# aktuelles vorselektieren
+	# preselect current prio
 	for i in range(0, len(rows) ):
 		if cmp(str(myprio), str(rows[i][0])) == 0:
 			print """ <input type="radio" name="edit_prio" value="%s" checked>%s - %s</option><br/> """ % ( str(rows[i][0]), str(rows[i][0]), str(rows[i][1]))
@@ -249,16 +249,16 @@ if form.has_key('id'):
 			cur.execute("COMMIT;");
 
 			print "Content-Type: text/html; charset=utf-8\n"
-			print "<b>Task erstellt.</b>"
+			print "<b>Task created.</b>"
 
 			sys.exit(1)
 
 		else:
 			print "Content-Type: text/html; charset=utf-8\n"
-			print "<b>Kein Task ohne Text.</b>"
+			print "<b>Your task description needs some text.</b>"
 			sys.exit(1)
 
-### Sonderfall:
+### Special case:
 if form.has_key('del'):
 	print "Content-Type: text/html; charset=utf-8\n"
 	print """ <form name="edit_del" action="/index.py" method="POST"> """
@@ -267,12 +267,12 @@ if form.has_key('del'):
 	rows = cur.fetchall()[0][0];
 
 	print """
-	Task "%s" wird gel&ouml;scht.</BR>
+	Task "%s" will be deleted.</BR>
 	<BR>
 	<input type="hidden" name="edit_del" value="urmum">
 	<input type="hidden" name="id" value="%s">
 	<input type="submit" value="ok" style="background-color: black; border:0px; padding:3px; color: #fff; font-weight:bold;" ></div>
-	<input type="button" value="nee" style="background-color: black; border:0px; padding:3px; color: #fff; font-weight:bold;" onClick="document.location='/index.py'"></div>
+	<input type="button" value="no" style="background-color: black; border:0px; padding:3px; color: #fff; font-weight:bold;" onClick="window.top.window.$.fancybox.close();"></div>
 	</form>	
 	""" % (rows, str(form['del'].value) )
 	
@@ -284,7 +284,7 @@ if form.has_key('edit_del') and form.has_key('id'):
 	cur.execute("UPDATE task SET perc=%s WHERE tid=%s", ( 100, str(id) ) )
 	cur.execute("COMMIT;");
 
-### alles redirecten
+### redirect everything that has "id" set
 if form.has_key('id'):
 	print "Location: /index.py\n"
 	sys.exit(1)
@@ -320,7 +320,7 @@ else:
 
 rows = cur.fetchall();
 
-# achtung vor tasks, die nicht verlinkt sind, daher wird hier len(rows) genutzt, nicht folgendes:
+# be careful with tasks, that are not linked; that's why we use len(rows) and not this:
 # cur.execute("SELECT count(tid) FROM task;")
 # tasknr = cur.fetchall()[0][0]
 
@@ -328,11 +328,11 @@ for i in range(0, len(rows)):
 	f = open("templates/data", "r")
 	data = f.read()
 
-	# user holen, dem der task gehoert
+	# get user who owns the task
 	u = rows[i][0] 
 	data = data.replace("DUMMY_USER",	str(allusers[u-1][1]))
 
-	# color holen
+	# get color
 	c =  rows[i][5]
 	data = data.replace("DUMMY_BGCOLOR",	str(color[c-1][1]))
 
