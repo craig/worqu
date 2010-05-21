@@ -52,12 +52,11 @@ html, body {margin:0; padding:0; width:100%; height:100%; overflow:hidden;}
 <div id="scroller">
 <div id="content">
 
-<A HREF="/index.py" onfocus="this.blur()"><img src="head.jpg" border="0"></A>
-
 <H3>
-Admin-Prioliste
+worqu - Queue it now, do it later
 <A class="openedit" HREF="/index.py?edit=-1">new</A>
 <A HREF="/index.py">refresh</A>
+<A HREF="/index.py">home</A>
 </H3>
 
 <table class="sample"> <tr>
