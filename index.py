@@ -292,21 +292,48 @@ if form.has_key('id'):
 
 print "Content-Type: text/html; charset=utf-8\n"
 
-# show header with random picture in the background 
 f = open("templates/header", "r")
 data = f.read()
+f.close()
+print data
+
+# show header with random picture in the background 
+f = open("templates/background", "r")
+data = f.read()
+f.close()
 try:
 	files = os.listdir("img")
 	rnr = random.randrange(0,len(files))
 	imgfile = files[ rnr  ]
 	data = data.replace("DUMMY_BACKGROUND",	"img/" + str(imgfile))
+	print data
 except:
 	pass
 
-print data
+# css layer needed for links
+f = open("templates/csslayer", "r")
+data = f.read()
 f.close()
+print data
 
-# pre-fetching needed data
+# show links
+cur.execute("SELECT url, descr FROM toplink ORDER BY id;")
+toplink = cur.fetchall();
+if len(toplink) > 0:
+	print """<font style="font-size: xx-small">"""
+	for i in range(0, len(toplink)):
+		print """<A HREF="%s">%s</A>""" % (toplink[i][0], toplink[i][1])
+	print """</font>"""
+
+# contentheader
+f = open("templates/contentheader", "r")
+data = f.read()
+f.close()
+print data
+
+
+
+# fetching needed data
 cur.execute("SELECT count(pid) FROM person;")
 rows = cur.fetchall()[0][0];
 

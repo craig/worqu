@@ -41,6 +41,12 @@ priodesc	varchar(16)	NOT NULL,
 color		varchar(16)	NOT NULL
 );
 
+CREATE TABLE toplink (
+	id		SERIAL		NOT NULL UNIQUE,
+	url		varchar(256)	NOT NULL,
+	descr		varchar(256)	NOT NULL
+);
+
 INSERT INTO prioattr (prio,priodesc,color) VALUES (1,'urgent','red');
 INSERT INTO prioattr (prio,priodesc,color) VALUES (2,'high','tomato');
 INSERT INTO prioattr (prio,priodesc,color) VALUES (3,'normal','#FFFF66');
@@ -54,5 +60,6 @@ GRANT ALL ON category TO worqu;
 GRANT ALL ON task TO worqu;
 GRANT ALL ON prioattr TO worqu;
 GRANT ALL ON task_tid_seq to worqu;
+GRANT ALL ON toplink to worqu;
 
 
