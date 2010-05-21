@@ -23,6 +23,8 @@ How to get this to work:
 		AddHandler cgi-script .py
 	</Directory>
 
+Optional:
 - mkdir /var/www/foo/img, put your favorite wallpapers there
-- have a look at index.py ;)
+- add URLs to the top of worqu: INSERT INTO toplink (url, descr) VALUES ('http://foo','foo');
+
 
