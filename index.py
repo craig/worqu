@@ -289,9 +289,10 @@ if form.has_key('id'):
 	print "Location: /index.py\n"
 	sys.exit(1)
 
-
+# Header for charset
 print "Content-Type: text/html; charset=utf-8\n"
 
+# show header
 f = open("templates/header", "r")
 data = f.read()
 f.close()
@@ -326,11 +327,17 @@ if len(toplink) > 0:
 	print """</font>"""
 
 # contentheader
-f = open("templates/contentheader", "r")
-data = f.read()
-f.close()
-print data
+print """ <H3> worqu - Queue work now, do it later.
+<A class="openedit" HREF="/index.py?edit=-1">new</A>"""
 
+# if 'user' was specified, refresh button should only refresh tasks for that user
+if form.has_key('user'):
+	print """<A HREF="/index.py?user=%s">refresh</A>""" % escape(unquote(str(form.getvalue("user"))),1)
+else:
+	print """<A HREF="/index.py">refresh</A>"""
+
+print """<A HREF="/index.py">home</A>"""
+print """</H3> <table class="sample"> <tr>"""
 
 
 # fetching needed data
