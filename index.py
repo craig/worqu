@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-This is Worqu, a simple web-based program to manage a queue of tasks.
+This is worqu, a simple web-based program to manage a queue of tasks.
 Copyright (C) 2010 by Stefan Behte
 
 This program is free software; you can redistribute it and/or
