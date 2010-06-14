@@ -352,9 +352,9 @@ allusers = cur.fetchall();
 
 if form.has_key('user'):
 	user = escape(unquote(str(form.getvalue("user"))),1)
-	cur.execute("SELECT pid, tid, taskdesc, to_char(endtime, 'YYYY-MM-DD'), perc, prio, url, position FROM persontask JOIN person ON persontask.personid = person.pid INNER JOIN task ON persontask.taskid = task.tid WHERE person.name=%s ORDER BY position DESC, prio ASC;", (user,) )
+	cur.execute("SELECT pid, tid, taskdesc, to_char(endtime, 'YYYY-MM-DD'), perc, prio, url, position FROM persontask JOIN person ON persontask.personid = person.pid INNER JOIN task ON persontask.taskid = task.tid WHERE person.name=%s ORDER BY position DESC, prio ASC, endtime ASC;", (user,) )
 else:
-	cur.execute("SELECT pid, tid, taskdesc, to_char(endtime, 'YYYY-MM-DD'), perc, prio, url, position FROM persontask JOIN person ON persontask.personid = person.pid INNER JOIN task ON persontask.taskid = task.tid ORDER BY position DESC, prio ASC;" )
+	cur.execute("SELECT pid, tid, taskdesc, to_char(endtime, 'YYYY-MM-DD'), perc, prio, url, position FROM persontask JOIN person ON persontask.personid = person.pid INNER JOIN task ON persontask.taskid = task.tid ORDER BY position DESC, prio ASC, endtime ASC;" )
 
 rows = cur.fetchall();
 
