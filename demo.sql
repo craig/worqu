@@ -32,6 +32,6 @@ INSERT INTO toplink (url, descr) VALUES ('http://dev.mysql.com/downloads/other/e
 INSERT INTO toplink (url, descr) VALUES ('http://www.bugzilla.com','bugzilla');
 INSERT INTO toplink (url, descr) VALUES ('http://www.nagios.com','nagios');
 INSERT INTO toplink (url, descr) VALUES ('http://www.cacti.org','cacti');
-INSERT INTO toplink (url, descr) VALUES ('http://www.ntop.org/ntop.html','ntop');
+INSERT INTO toplink (url, descr, popup) VALUES ('http://www.ntop.org/ntop.html','ntop', false);
 
 
