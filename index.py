@@ -330,7 +330,8 @@ if len(toplink) > 0:
 	print """</font>"""
 
 # contentheader
-print """ <H3> worqu - Queue work now, do it later.
+print """
+<H3>worqu - Queue work now, do it later.
 <A class="openedit" HREF="index.py?edit=-1">new</A>"""
 
 # if 'user' was specified, refresh button should only refresh tasks for that user
@@ -339,8 +340,10 @@ if form.has_key('user'):
 else:
 	print """<A HREF="index.py">refresh</A>"""
 
-print """<A HREF="index.py">home</A>"""
-print """</H3> <table class="sample"> <tr>"""
+print """<A HREF="index.py">home</A>
+</H3>
+
+<table class="sample"> <tr>"""
 
 
 # fetching needed data
