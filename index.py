@@ -45,7 +45,7 @@ if form.has_key('edit'):
 	edit = escape(unquote(str(form.getvalue("edit"))),1)
 
 	### TEXT & URL
-	print """ <form name="edit_text" action="/index.py" method="POST"> """
+	print """ <form name="edit_text" action="index.py" method="POST"> """
 
 	try:
 		cur.execute("SELECT taskdesc,url FROM task WHERE tid=%s;", (edit,) )
@@ -261,7 +261,7 @@ if form.has_key('id'):
 ### Special case:
 if form.has_key('del'):
 	print "Content-Type: text/html; charset=utf-8\n"
-	print """ <form name="edit_del" action="/index.py" method="POST"> """
+	print """ <form name="edit_del" action="index.py" method="POST"> """
 	
 	cur.execute("SELECT taskdesc FROM task WHERE tid=%s;", ( str(form['del'].value), ) )
 	rows = cur.fetchall()[0][0];
@@ -286,7 +286,10 @@ if form.has_key('edit_del') and form.has_key('id'):
 
 ### redirect everything that has "id" set
 if form.has_key('id'):
-	print "Location: /index.py\n"
+	if form.has_key('user'):
+		print "Location: index.py?user=%s\n" % escape(unquote(str(form.getvalue("user"))),1)
+	else:
+		print "Location: index.py\n"
 	sys.exit(1)
 
 # Header for charset
@@ -328,15 +331,15 @@ if len(toplink) > 0:
 
 # contentheader
 print """ <H3> worqu - Queue work now, do it later.
-<A class="openedit" HREF="/index.py?edit=-1">new</A>"""
+<A class="openedit" HREF="index.py?edit=-1">new</A>"""
 
 # if 'user' was specified, refresh button should only refresh tasks for that user
 if form.has_key('user'):
-	print """<A HREF="/index.py?user=%s">refresh</A>""" % escape(unquote(str(form.getvalue("user"))),1)
+	print """<A HREF="index.py?user=%s">refresh</A>""" % escape(unquote(str(form.getvalue("user"))),1)
 else:
-	print """<A HREF="/index.py">refresh</A>"""
+	print """<A HREF="index.py">refresh</A>"""
 
-print """<A HREF="/index.py">home</A>"""
+print """<A HREF="index.py">home</A>"""
 print """</H3> <table class="sample"> <tr>"""
 
 

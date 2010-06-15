@@ -5,12 +5,12 @@
 			<BR/>
 			<font style="font-size: xx-small">
 			DUMMY_DATE, DUMMY_PERCENT%, DUMMY_POS
-			<a href="/index.py?id=DUMMY_TASKID&up=DUMMY_TASKID">up</a>
-			<a href="/index.py?id=DUMMY_TASKID&down=DUMMY_TASKID">down</a>
-			<a class="opendel" href="/index.py?del=DUMMY_TASKID">del</a>
-			<a class="openedit" href="/index.py?edit=DUMMY_TASKID">edit</a>
+			<a href="index.py?id=DUMMY_TASKID&up=DUMMY_TASKID&user=DUMMY_USER">up</a>
+			<a href="index.py?id=DUMMY_TASKID&down=DUMMY_TASKID&user=DUMMY_USER">down</a>
+			<a class="opendel" href="index.py?del=DUMMY_TASKID">del</a>
+			<a class="openedit" href="index.py?edit=DUMMY_TASKID">edit</a>
 			</td><td>
-			<a href="/index.py?user=DUMMY_USER">DUMMY_USER</a>
+			<a href="index.py?user=DUMMY_USER">DUMMY_USER</a>
 			</font>
 		</td>
 

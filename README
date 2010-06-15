@@ -11,8 +11,10 @@ BTW: There is no authentication at all, everyone can mess up the queue. :)
 How to get this to work:
 - create user for postgres database (CREATE ROLE worqu WITH LOGIN PASSWORD 'worqu';)
 - create a postgres database (CREATE DATABASE worqu;)
-- create new users manually with psql (see scheme.sql)
 - edit inc.py, put in username, password etc.
+- create new users manually with psql (see scheme.sql)
+- import scheme.sql to get the initial database layout (psql < scheme.sql)
+- import demo.sql for some demo data (psql < demo.sql)
 - install the python module psycopg2 (called python-psycopg2 in debian)
 - make sure your webserver supports python
 - apache example:
