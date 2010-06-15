@@ -1,8 +1,15 @@
-- Automatisch Text laden bei Eventum & OTRS (?)
-- Edit: Änderung -> OK -> Frame schließen!
-- Datum (Ajax)
+TODO:
+- Close fancybox iframe after edit 
+- Link on top with or without popup
+- select date with fancy jquery
+- activate/deactivate Graphics
+- Priority: external view, customer, internal
+- "Bubble up" old Tasks
+- save duration of tasks, show duration of all tasks
+- set time that people can work on tasks per week
+
+Ideas:
+- Automatic loading of text from Eventum & OTRS (?)
 - Funktion: "Markieren für verschieben" -> Einfügen davor, Einfügen danach ?
-- Grafiken aktivieren/deaktivieren
-- Prio: Außenwirkung, Kunde, intern
-- Gruppe angeben (?group=services), je Gruppe eigener Titel
+- create groups (?group=services), own title per group
 

@@ -44,6 +44,7 @@ color		varchar(16)	NOT NULL
 CREATE TABLE toplink (
 	id		SERIAL		NOT NULL UNIQUE,
 	url		varchar(256)	NOT NULL,
+	popup		boolean		NOT NULL DEFAULT TRUE,
 	descr		varchar(256)	NOT NULL
 );
 
