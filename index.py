@@ -372,6 +372,12 @@ for i in range(0, len(rows)):
 	# get user who owns the task
 	u = rows[i][0] 
 	data = data.replace("DUMMY_USER",	str(allusers[u-1][1]))
+	
+	# user that was set 
+	try:
+		data = data.replace("DUMMY_GETUSER",	str(user))
+	except:
+		data = data.replace("DUMMY_GETUSER",    '')
 
 	# get color
 	c =  rows[i][5]
