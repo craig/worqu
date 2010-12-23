@@ -4,12 +4,12 @@ TODO:
 - select date with fancy jquery
 - activate/deactivate Graphics
 - Priority: external view, customer, internal
-- "Bubble up" old Tasks
+- "Bubble up" old Tasks after some time
 - save duration of tasks, show duration of all tasks
 - set time that people can work on tasks per week
+- add an activity log
 
 Ideas:
-- Automatic loading of text from Eventum & OTRS (?)
 - Funktion: "Markieren für verschieben" -> Einfügen davor, Einfügen danach ?
 - create groups (?group=services), own title per group
 
