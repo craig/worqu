@@ -384,7 +384,10 @@ for i in range(0, len(rows)):
 
 	# get color
 	c =  rows[i][5]
-	data = data.replace("DUMMY_BGCOLOR",	str(color[c-1][1]))
+	try:
+		data = data.replace("DUMMY_BGCOLOR",	str(color[c-1][1]))
+	except:
+		data = data.replace("DUMMY_BGCOLOR",'')
 
 	data = data.replace("DUMMY_TASKID",	str(rows[i][1]))
 	data = data.replace("DUMMY_TASKDESC",	str(rows[i][2]))
