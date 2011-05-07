@@ -67,8 +67,8 @@ if form.has_key('edit'):
 
 
 	### ENDTIME
-	cur.execute("SELECT endtime FROM task WHERE tid=%s;", (edit,) )
 	try:
+		cur.execute("SELECT endtime FROM task WHERE tid=%s;", (edit,) )
 		endtime = cur.fetchall()[0][0]
 	except:
 		endtime = '2010-12-31 00:00:00'
