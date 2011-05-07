@@ -287,7 +287,7 @@ if form.has_key('edit_del') and form.has_key('id'):
 ### redirect everything that has "id" set
 if form.has_key('id'):
 	if form.has_key('user'):
-		print "Location: index.py?user=%s\n" % escape(unquote(str(form.getvalue("user"))),1)
+		print "Location: index.py?user=%s\n" % escape(unquote(str(form.getvalue("user"))),1).replace('\r','').replace('\n','')
 	else:
 		print "Location: index.py\n"
 	sys.exit(1)
